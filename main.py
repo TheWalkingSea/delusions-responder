@@ -29,7 +29,7 @@ async def on_message(message: discord.Message) -> None:
         
 
     for word in bot.config['delusions']:
-        delusion = rf'\b{word}\b'
+        delusion = rf'\b{word}[\bs]'
         if (re.search(delusion, message.content, re.IGNORECASE)):
             await message.channel.send("<:sus2:1194168202989682729>", reference=message)
             break
